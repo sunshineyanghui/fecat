@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[60],{331:function(p,s,n){p.exports=n.p+"assets/img/01.50977780.jpeg"}}]);
