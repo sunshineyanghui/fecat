@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>让开发效率“飞起”的VS Code 插件 | 前端小喵</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="icon" href="/favicon.ico">
+    <script charset="utf-8" src="/javascript/common.js"></script>
+    <meta name="description" content="前端小喵是一个提供前端优秀文章,前端学习,前端教程,前端面试题,前端大厂面试题,前端学习资源,FE文章,前端优秀文章集锦,云撸猫,旅游攻略,旅游笔记,摄影笔记,博主日常旅游的个人博客网站。">
+    <meta name="baidu-site-verification" content="code-95UBP5nWDF">
+    <link rel="preload" href="/assets/css/0.styles.19e13bc2.css" as="style"><link rel="preload" href="/assets/js/app.7ebdff9e.js" as="script"><link rel="preload" href="/assets/js/2.82e9f8bd.js" as="script"><link rel="preload" href="/assets/js/3.5644b8ca.js" as="script"><link rel="prefetch" href="/assets/js/10.b278c1ae.js"><link rel="prefetch" href="/assets/js/11.b506ccc7.js"><link rel="prefetch" href="/assets/js/12.1a8bd1e7.js"><link rel="prefetch" href="/assets/js/13.052fb17c.js"><link rel="prefetch" href="/assets/js/14.bc9d38bb.js"><link rel="prefetch" href="/assets/js/15.f517e814.js"><link rel="prefetch" href="/assets/js/16.4a46e1bc.js"><link rel="prefetch" href="/assets/js/17.2dcb1f9c.js"><link rel="prefetch" href="/assets/js/18.60cdfcd7.js"><link rel="prefetch" href="/assets/js/19.0a56744e.js"><link rel="prefetch" href="/assets/js/20.97c3cda8.js"><link rel="prefetch" href="/assets/js/21.f51a2936.js"><link rel="prefetch" href="/assets/js/22.1f76d5b5.js"><link rel="prefetch" href="/assets/js/23.a04eb902.js"><link rel="prefetch" href="/assets/js/24.501a6045.js"><link rel="prefetch" href="/assets/js/25.aa3a1731.js"><link rel="prefetch" href="/assets/js/26.9fcad813.js"><link rel="prefetch" href="/assets/js/27.3dd7ffbf.js"><link rel="prefetch" href="/assets/js/28.d17ae7f5.js"><link rel="prefetch" href="/assets/js/29.63432ace.js"><link rel="prefetch" href="/assets/js/30.719b8b58.js"><link rel="prefetch" href="/assets/js/31.31acb85f.js"><link rel="prefetch" href="/assets/js/32.b295fd89.js"><link rel="prefetch" href="/assets/js/33.b7dd14a2.js"><link rel="prefetch" href="/assets/js/34.446fca46.js"><link rel="prefetch" href="/assets/js/35.422add97.js"><link rel="prefetch" href="/assets/js/36.c719a720.js"><link rel="prefetch" href="/assets/js/37.6fdc2ad3.js"><link rel="prefetch" href="/assets/js/38.ab53be6a.js"><link rel="prefetch" href="/assets/js/39.0fb78a22.js"><link rel="prefetch" href="/assets/js/4.d44dc023.js"><link rel="prefetch" href="/assets/js/40.5b8ce714.js"><link rel="prefetch" href="/assets/js/41.e91c8107.js"><link rel="prefetch" href="/assets/js/42.817dc2d7.js"><link rel="prefetch" href="/assets/js/43.bed1ec6d.js"><link rel="prefetch" href="/assets/js/44.c848d5c5.js"><link rel="prefetch" href="/assets/js/45.06f82ef2.js"><link rel="prefetch" href="/assets/js/46.35d709f2.js"><link rel="prefetch" href="/assets/js/47.b15dd375.js"><link rel="prefetch" href="/assets/js/48.54fb9fcc.js"><link rel="prefetch" href="/assets/js/49.945fe626.js"><link rel="prefetch" href="/assets/js/5.4fe335f8.js"><link rel="prefetch" href="/assets/js/50.ad4aa824.js"><link rel="prefetch" href="/assets/js/51.b2322f6f.js"><link rel="prefetch" href="/assets/js/52.7792be93.js"><link rel="prefetch" href="/assets/js/53.b3dcdc01.js"><link rel="prefetch" href="/assets/js/54.be1fac28.js"><link rel="prefetch" href="/assets/js/55.9a081f9a.js"><link rel="prefetch" href="/assets/js/56.49e2182b.js"><link rel="prefetch" href="/assets/js/57.f1892074.js"><link rel="prefetch" href="/assets/js/58.95a95d8d.js"><link rel="prefetch" href="/assets/js/59.c1accb3b.js"><link rel="prefetch" href="/assets/js/6.2a9b19b5.js"><link rel="prefetch" href="/assets/js/60.4364105a.js"><link rel="prefetch" href="/assets/js/61.69437350.js"><link rel="prefetch" href="/assets/js/62.2bd8aa31.js"><link rel="prefetch" href="/assets/js/63.95b827e3.js"><link rel="prefetch" href="/assets/js/64.0c1f21b6.js"><link rel="prefetch" href="/assets/js/65.d039191c.js"><link rel="prefetch" href="/assets/js/66.60f0e411.js"><link rel="prefetch" href="/assets/js/67.24ccaeac.js"><link rel="prefetch" href="/assets/js/68.7bfe5d8d.js"><link rel="prefetch" href="/assets/js/69.e07c3681.js"><link rel="prefetch" href="/assets/js/7.98a8a9d3.js"><link rel="prefetch" href="/assets/js/70.82a4f3e5.js"><link rel="prefetch" href="/assets/js/71.95f02c13.js"><link rel="prefetch" href="/assets/js/72.31c80a93.js"><link rel="prefetch" href="/assets/js/73.f138c8a8.js"><link rel="prefetch" href="/assets/js/74.d45b7c67.js"><link rel="prefetch" href="/assets/js/75.66394288.js"><link rel="prefetch" href="/assets/js/76.1e65f816.js"><link rel="prefetch" href="/assets/js/77.da8d6aca.js"><link rel="prefetch" href="/assets/js/78.3b13dda8.js"><link rel="prefetch" href="/assets/js/79.4d5635a7.js"><link rel="prefetch" href="/assets/js/8.0c680d33.js"><link rel="prefetch" href="/assets/js/80.44eea156.js"><link rel="prefetch" href="/assets/js/81.9cdf5211.js"><link rel="prefetch" href="/assets/js/9.7939cd72.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.19e13bc2.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.jpg" alt="前端小喵" class="logo"> <span class="site-name can-hide">前端小喵</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/emoji.html" class="nav-link">
+  表情
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">资源</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">资源</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/resources/wechat/typesetting.html" class="nav-link">
+  公众号编辑工具
+</a></li><li class="dropdown-item"><!----> <a href="/resources/noCopyrightImage.html" class="nav-link">
+  无版权图片
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/emoji.html" class="nav-link">
+  表情
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">资源</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">资源</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/resources/wechat/typesetting.html" class="nav-link">
+  公众号编辑工具
+</a></li><li class="dropdown-item"><!----> <a href="/resources/noCopyrightImage.html" class="nav-link">
+  无版权图片
+</a></li></ul></div></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="让开发效率-飞起-的vs-code-插件"><a href="#让开发效率-飞起-的vs-code-插件" class="header-anchor">#</a> 让开发效率“飞起”的VS Code 插件</h1> <p>前言
+VSCode，是一个免费的、开源的跨平台编辑器,也是我最满意的编辑器之一。</p> <p>本文向大家推荐一些我喜欢的vscode插件，不出意外的话，这些插件将对你的工作效率提升有不小的帮助！</p> <p>GitLens
+VS Code中的 Git 体验在易用性和完整性之间取得了一个不错的平衡，大部分用户都能够使用它完成工作，同时又不会被太多的功能吓到。但是很多硬核的 Git 用户肯定会觉得功能还不够用。包括但不限于：</p> <p>不能查看某个 commit 中的代码改动；
+不能比较两个 commit 或者 branch，然后阅览代码改动；
+不能查看代码历史记录。
+不过 GitLens 这个插件的出现，就弥补上了上述不足。</p> <img src="/assets/img/001.d84c81f4.gif">
+类似的 Extension：
+<p>Git History -- 用来查看 git log 或则一个文件的 git 历史，比较不同的分支，commits
+Git Blame  - 它允许您在当前选定行的状态栏中看到 Git Blame 信息。GitLens 也提供了类似的功能。
+Git Project Manager --可以一键搜索并打开某个的基于 Git 管理的项目
+Quokka.js
+Quokka.js 是一个用于 JavaScript 和 TypeScript 的实时运行代码平台。这意味着它会在你输入后立即运行您的代码，并在您的代码编辑器中显示各种执行结果。建议你亲自尝试一下。
+<img src="/assets/img/002.75acb001.gif"></p> <p>从上面的动态图，我们就可以知道 Quokka 是一个调试工具，可以为您正在编写的代码提供实时反馈。它能够预览变量的函数和计算值结果。</p> <p>Visual Studio Intellicode
+Visual Studio Intellicode 超过 350 万下载量，是 Visual Studio 上下载次数最多的插件。并且，在我看来，它会是你用过的最有用的插件之一。</p> <p>这个插件能帮助开发人员生成智能代码补全提示，并且它内置支持很多种编程语言。</p> <img src="/assets/img/003.ccc88c2f.jpeg">
+Visual Studio Intellicode 使用机器学习技术，通过学习大量 GitHub 项目的代码，能找到一些编码模式，然后在你编程时给予代码提示。
+<p>Debugger for Chrome
+如果你想调试 JavaScript 程序，你可以不必离开 VSCode 开发环境。</p> <p>Debugger for Chrome 这款插件就可以做到这点，它由微软发布，允许你在 VSCode 中直接调试网页源文件，该插件主要利用 Chrome 所开放出来的接口来实现对其渲染的页面进行调试。
+<img src="/assets/img/004.3a8442e5.png">
+Auto Rename Tag
+无论你选择哪种框架，假如当开始和结束标签间的代码有 50 多行时，你想将一个H2标签更改为H3标签，或者你想将一个div标签更改为span标签，不管要做什么，你都要浪费时间来查找结束标签，这时候就该用这个插件-- Auto Rename Tag</p> <img src="/assets/img/005.0dfffba5.gif">
+这个插件在你修改某一个标签时会自动匹配结束标签修改为相应的结束标签，反之亦然。
+<p>SCSS IntelliSense
+在 SCSS 中创建变量，这是很棒的体验。但创建后，你还记得它们吗？可能大多没记住。
+<img src="/assets/img/006.da75a544.gif">
+有了这个插件，你能在应用的任何位置快速获取你发明的那些 SCSS 变量名。再也不用记住那些名称，也无需进行文件搜索。</p> <p>ESLint
+ESLint 插件将 ESLint 集成进了 Visual Studio Code 中。如果你还不了解这款插件，我简单说一下，这款插件会静态分析你的代码，快速找到代码中的问题。</p> <p>ESLint 找到的大部分问题都可以由其自动修复。ESLint 会根据当前文件使用的语法进行自动修复，所以就不会像传统的“寻找 - 替换”算法那样产生语法错误。</p> <p>最重要的是，ESLint 是高度可定制化的。</p> <p>Prettier
+对那些想严格遵守一组编码规则格式的开发者来说，Prettier 是相当有用的插件。</p> <p>并且，它是一个健壮的、固守成规的代码格式化利器，它可以一键美化你的 JavaScript/TypeScript/CSS 代码。</p> <p>Vetur
+Vetur是一款必备的Vue开发工具。支持多种功能，比如语法高亮、错误检测、Emmet和Snippet等等。
+<img src="/assets/img/007.0a27eceb.jpg"></p> <p>Code Runner
+时至今日，Code Runner已经有了超过300万的下载量，代码一键运行，支持超过40种语言。</p> <p>安装好Code Runner之后，打开你所要运行的文件，有多种方式来快捷地运行你的代码：</p> <p>在编辑区，右键选择 Run Code
+键盘快捷键 Ctrl+Alt+N
+快捷键 F1 调出 命令面板, 然后输入 Run Code
+在左侧的文件管理器，右键选择 Run Code
+右上角的运行小三角按钮
+<img src="/assets/img/008.3aca57e5.gif">
+Path Intellisense
+Path Intellisense 可以快速提高你的开发效率。如果你同时开发多个项目，并使用很多不同的技术，你肯定想要一个方便的工具，它能帮你记住文件路径。</p> <p>这款插件就能为你节省很多这方面的时间，帮你省去找到正确文件路径的时间。
+<img src="/assets/img/009.0c58a994.gif">
+Color Picker
+在书写 HTML 和 CSS 的时候，你可能经常需要修改元素的颜色。VS Code 为修改颜色，提供了一个图形化的界面，其中包含了颜色相关的属性。</p> <p>当你打开一段 HTML 或者 CSS 代码时，你可以看到，VS Code 在颜色的前面画了一个方块（即颜色装饰器 Color Decorator），用于展示这段颜色属性所对应的最终效果。然后你把鼠标移动到这段代码上时，一个颜色选择器窗口就显示出来了，根据你需要来调整颜色。
+<img src="/assets/img/010.432c537f.gif">
+参考文章
+30个极大提高开发效率的Visual Studio Code插件
+这就是我想要的 VSCode 插件！
+26 Miraculous VS Code Tools for JavaScript Developers in 2019
+10 Extremely Helpful Visual Studio Code Plugins for Programmers
+让开发效率“飞起”的 5 个 VS Code 插件</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新时间:</span> <span class="time">10/31/2020, 12:51:55 PM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.7ebdff9e.js" defer></script><script src="/assets/js/2.82e9f8bd.js" defer></script><script src="/assets/js/3.5644b8ca.js" defer></script>
+  </body>
+</html>
