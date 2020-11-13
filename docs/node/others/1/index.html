@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>node实现github自动部署到云服务器 | 前端小喵</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="icon" href="/favicon.ico">
+    <script charset="utf-8" src="/javascript/common.js"></script>
+    <meta name="description" content="前端小喵是一个提供前端优秀文章,前端学习,前端教程,前端面试题,前端大厂面试题,前端学习资源,FE文章,前端优秀文章集锦,云撸猫,旅游攻略,旅游笔记,摄影笔记,博主日常旅游的个人博客网站。">
+    <meta name="baidu-site-verification" content="code-95UBP5nWDF">
+    <link rel="preload" href="/assets/css/0.styles.19e13bc2.css" as="style"><link rel="preload" href="/assets/js/app.bbfaf40f.js" as="script"><link rel="preload" href="/assets/js/2.1a4d3f9b.js" as="script"><link rel="preload" href="/assets/js/7.2d824d60.js" as="script"><link rel="prefetch" href="/assets/js/10.8472555a.js"><link rel="prefetch" href="/assets/js/11.57ffcc28.js"><link rel="prefetch" href="/assets/js/12.9e33733a.js"><link rel="prefetch" href="/assets/js/13.64792b8a.js"><link rel="prefetch" href="/assets/js/14.f543f187.js"><link rel="prefetch" href="/assets/js/15.4f0bba5f.js"><link rel="prefetch" href="/assets/js/16.3c9eb5a4.js"><link rel="prefetch" href="/assets/js/17.a9e3eafe.js"><link rel="prefetch" href="/assets/js/18.12a0a877.js"><link rel="prefetch" href="/assets/js/19.316c2c24.js"><link rel="prefetch" href="/assets/js/20.012e875a.js"><link rel="prefetch" href="/assets/js/21.98e673e9.js"><link rel="prefetch" href="/assets/js/22.f89a2539.js"><link rel="prefetch" href="/assets/js/23.ef4600cb.js"><link rel="prefetch" href="/assets/js/24.84be7d85.js"><link rel="prefetch" href="/assets/js/25.0f794075.js"><link rel="prefetch" href="/assets/js/26.00d7b963.js"><link rel="prefetch" href="/assets/js/27.1f4398a1.js"><link rel="prefetch" href="/assets/js/28.e6fd0756.js"><link rel="prefetch" href="/assets/js/29.5ab95751.js"><link rel="prefetch" href="/assets/js/3.a4b4cec0.js"><link rel="prefetch" href="/assets/js/30.2c0c5999.js"><link rel="prefetch" href="/assets/js/31.a39bd7f9.js"><link rel="prefetch" href="/assets/js/32.5ff58dac.js"><link rel="prefetch" href="/assets/js/33.634a30ca.js"><link rel="prefetch" href="/assets/js/34.e2bcf61e.js"><link rel="prefetch" href="/assets/js/35.e0147855.js"><link rel="prefetch" href="/assets/js/36.b6623399.js"><link rel="prefetch" href="/assets/js/37.0f73d628.js"><link rel="prefetch" href="/assets/js/38.0f73b31a.js"><link rel="prefetch" href="/assets/js/39.b8b8a06e.js"><link rel="prefetch" href="/assets/js/4.8565a617.js"><link rel="prefetch" href="/assets/js/40.36fcaace.js"><link rel="prefetch" href="/assets/js/41.0bec59e1.js"><link rel="prefetch" href="/assets/js/42.e69fe24a.js"><link rel="prefetch" href="/assets/js/43.ed2824cf.js"><link rel="prefetch" href="/assets/js/44.d47fb96d.js"><link rel="prefetch" href="/assets/js/45.d95d1a0b.js"><link rel="prefetch" href="/assets/js/46.e1994493.js"><link rel="prefetch" href="/assets/js/47.c88fa9f3.js"><link rel="prefetch" href="/assets/js/48.863ef248.js"><link rel="prefetch" href="/assets/js/49.04faa9cb.js"><link rel="prefetch" href="/assets/js/5.0c4cb625.js"><link rel="prefetch" href="/assets/js/50.835928ce.js"><link rel="prefetch" href="/assets/js/51.82fc2139.js"><link rel="prefetch" href="/assets/js/52.97572732.js"><link rel="prefetch" href="/assets/js/53.c8282e60.js"><link rel="prefetch" href="/assets/js/54.ae52813f.js"><link rel="prefetch" href="/assets/js/55.aee848e7.js"><link rel="prefetch" href="/assets/js/56.6f2e5e9b.js"><link rel="prefetch" href="/assets/js/57.3aa7aea7.js"><link rel="prefetch" href="/assets/js/58.4e5d2b86.js"><link rel="prefetch" href="/assets/js/59.68cdf1fa.js"><link rel="prefetch" href="/assets/js/6.e54b812b.js"><link rel="prefetch" href="/assets/js/60.dc0b1a02.js"><link rel="prefetch" href="/assets/js/61.658f1e1f.js"><link rel="prefetch" href="/assets/js/62.96c6abe9.js"><link rel="prefetch" href="/assets/js/63.9cf8432f.js"><link rel="prefetch" href="/assets/js/64.32837f9f.js"><link rel="prefetch" href="/assets/js/65.26aea7b6.js"><link rel="prefetch" href="/assets/js/66.5ed6dd85.js"><link rel="prefetch" href="/assets/js/67.f5509a2d.js"><link rel="prefetch" href="/assets/js/68.09cab970.js"><link rel="prefetch" href="/assets/js/69.2d327ac0.js"><link rel="prefetch" href="/assets/js/70.8c89c625.js"><link rel="prefetch" href="/assets/js/71.dc8166f4.js"><link rel="prefetch" href="/assets/js/72.4c449f24.js"><link rel="prefetch" href="/assets/js/73.f859805d.js"><link rel="prefetch" href="/assets/js/74.35fd0162.js"><link rel="prefetch" href="/assets/js/75.d279ea38.js"><link rel="prefetch" href="/assets/js/76.29e73d03.js"><link rel="prefetch" href="/assets/js/77.bc2cbbd2.js"><link rel="prefetch" href="/assets/js/78.d9a08c61.js"><link rel="prefetch" href="/assets/js/79.032ad368.js"><link rel="prefetch" href="/assets/js/8.7df7d61e.js"><link rel="prefetch" href="/assets/js/80.f44e53ba.js"><link rel="prefetch" href="/assets/js/81.1802c472.js"><link rel="prefetch" href="/assets/js/82.af86a27e.js"><link rel="prefetch" href="/assets/js/83.247f96bb.js"><link rel="prefetch" href="/assets/js/84.20ac9a16.js"><link rel="prefetch" href="/assets/js/85.e2479d27.js"><link rel="prefetch" href="/assets/js/9.58653452.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.19e13bc2.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.jpg" alt="前端小喵" class="logo"> <span class="site-name can-hide">前端小喵</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/weekend/" class="nav-link">
+  周末生活笔记
+</a></div><div class="nav-item"><a href="/resources/" class="nav-link">
+  资源分享
+</a></div><div class="nav-item"><a href="/emoji.html" class="nav-link">
+  表情
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">资源分享</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">资源分享</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/resources/wechat/typesetting.html" class="nav-link">
+  微信相关资源
+</a></li><li class="dropdown-item"><!----> <a href="/resources/noCopyrightImage.html" class="nav-link">
+  图片相关资源
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/weekend/" class="nav-link">
+  周末生活笔记
+</a></div><div class="nav-item"><a href="/resources/" class="nav-link">
+  资源分享
+</a></div><div class="nav-item"><a href="/emoji.html" class="nav-link">
+  表情
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Language Menu" class="dropdown-title"><span class="title">资源分享</span> <span class="arrow down"></span></button> <button type="button" aria-label="Language Menu" class="mobile-dropdown-title"><span class="title">资源分享</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/resources/wechat/typesetting.html" class="nav-link">
+  微信相关资源
+</a></li><li class="dropdown-item"><!----> <a href="/resources/noCopyrightImage.html" class="nav-link">
+  图片相关资源
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><a href="/node/koa/" class="sidebar-heading clickable"><span>koa</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/node/koa/1/" class="sidebar-link">通过koa实现jsonp的接口提供前端使用</a></li></ul></section></li><li><section class="sidebar-group depth-0"><a href="/node/others/" class="sidebar-heading clickable router-link-active open"><span>其他</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/node/others/1/" aria-current="page" class="active sidebar-link">node实现github自动部署到云服务器</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/node/others/1/#目的" class="sidebar-link">目的</a></li><li class="sidebar-sub-header"><a href="/node/others/1/#原理" class="sidebar-link">原理</a></li><li class="sidebar-sub-header"><a href="/node/others/1/#用到的技术" class="sidebar-link">用到的技术</a></li><li class="sidebar-sub-header"><a href="/node/others/1/#前提条件" class="sidebar-link">前提条件</a></li><li class="sidebar-sub-header"><a href="/node/others/1/#提供接口给github" class="sidebar-link">提供接口给github</a></li><li class="sidebar-sub-header"><a href="/node/others/1/#完整代码如下" class="sidebar-link">完整代码如下：</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="node实现github自动部署到云服务器"><a href="#node实现github自动部署到云服务器" class="header-anchor">#</a> node实现github自动部署到云服务器</h1> <p><a href="https://github.com/dai1254473705/autopull" target="_blank" rel="noopener noreferrer">点击查看源码<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h2 id="目的"><a href="#目的" class="header-anchor">#</a> 目的</h2> <p>通过github管理的项目，每次push后都需要到服务器pull代码，然后手动打包，重复的操作挺糟心的。但是github提供了<strong>Webhooks</strong>,可以实现本地push代码到远程后，服务器自动拉取远程代码，自动打包部署，节省大量时间。</p> <h2 id="原理"><a href="#原理" class="header-anchor">#</a> 原理</h2> <p>github的<strong>Webhooks</strong>允许用户设置post请求的接口地址，当本地代码推送到远程分支后，github将主动调用设置的接口，并将当前修改相关信息作为请求参数给到接口。接口在服务器上被调用的时候，就知道当前远程代码库有更新，此时可以调用脚本执行更新、打包等操作。</p> <h2 id="用到的技术"><a href="#用到的技术" class="header-anchor">#</a> 用到的技术</h2> <p>接下来我会通过<a href="https://nodejs.org/en/" target="_blank" rel="noopener noreferrer">nodejs<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>及<a href="https://www.npmjs.com/package/github-webhook-handler" target="_blank" rel="noopener noreferrer">github-webhook-handler<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>模块实现监听github代码push的事件，然后通过<a href="https://www.runoob.com/linux/linux-shell.html" target="_blank" rel="noopener noreferrer">shell<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>脚本实现代码更新打包的操作。</p> <h2 id="前提条件"><a href="#前提条件" class="header-anchor">#</a> 前提条件</h2> <ul><li>具有公网ip的云服务器</li> <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer">github仓库<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <blockquote><p>没有服务器的可以看这里</p> <ul><li><a href="https://cloud.tencent.com/act/cps/redirect?redirect=1074&amp;cps_key=e9ebcb4f44c7068bb96970971b4cce19&amp;from=console" target="_blank" rel="noopener noreferrer"> 腾讯云 云上盛惠，云产品限时抢购，1核2G云服务器首年88元<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.aliyun.com/1111/new?userCode=xshbseg5" target="_blank" rel="noopener noreferrer">阿里云服务器狂欢特惠，最低仅需84.97元/年，助力轻松上云<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></blockquote> <h2 id="提供接口给github"><a href="#提供接口给github" class="header-anchor">#</a> 提供接口给github</h2> <blockquote><p>接口的地址<code>path</code>通过<code>github-webhook-handler</code>模块配置产生，不需要自己额外的定义路由地址；同时需要设置<code>secret</code>，用于github校验。</p></blockquote> <div class="center"><div>github的webhooks</div> <img src="/assets/img/001.7eb10c78.jpg" title="github的webhooks"></div> <h6 id="_1、通过createhandler方法-可以配置path和secret-这两个参数自己随便定义就可以。"><a href="#_1、通过createhandler方法-可以配置path和secret-这两个参数自己随便定义就可以。" class="header-anchor">#</a> 1、通过<code>createHandler</code>方法，可以配置<code>path</code>和<code>secret</code>，这两个参数自己随便定义就可以。</h6> <div class="language- extra-class"><pre class="language-text"><code>const createHandler = require('github-webhook-handler')
+const handler = createHandler({ path: '/webhook', secret: 'sdsdfssdfsdf' })
+</code></pre></div><h6 id="_2、监听push事件"><a href="#_2、监听push事件" class="header-anchor">#</a> 2、监听push事件</h6> <div class="language- extra-class"><pre class="language-text"><code>handler.on('push', event=&gt; {
+   // github推送通知到接口后，会触发该方法，并拿到github请求的参数
+});
+</code></pre></div><h6 id="_3、监听error事件"><a href="#_3、监听error事件" class="header-anchor">#</a> 3、监听error事件</h6> <div class="language- extra-class"><pre class="language-text"><code>handler.on('error', function (err) {
+    console.error('Error:', err.message)
+});
+</code></pre></div><h6 id="_4、通过node的http模块启动服务"><a href="#_4、通过node的http模块启动服务" class="header-anchor">#</a> 4、通过node的http模块启动服务</h6> <div class="language- extra-class"><pre class="language-text"><code>http.createServer( (req, res)=&gt; {
+    handler(req, res, function (err) {
+        console.log('err',err);
+        res.statusCode = 404
+        res.end('api 404')
+    });
+}).listen(3001,()=&gt;{
+    console.log('running in http://127.0.0.1:3001/');
+});
+</code></pre></div><h6 id="_5、编写名为pull-sh的脚本"><a href="#_5、编写名为pull-sh的脚本" class="header-anchor">#</a> 5、编写名为<strong>pull.sh</strong>的脚本</h6> <p>我的文章通过vuepress编写，所以我需要做的有三个步骤：</p> <ul><li>进入到服务器上的vuepress项目</li> <li>通过<code>git pull</code>更新代码</li> <li>通过<code>npm run docs:build</code>打包代码</li></ul> <p>当然，如果还有其他脚本也可以方进入，完整脚本如下：</p> <div class="language- extra-class"><pre class="language-text"><code>#!/bin/bash 
+# 更新代码
+cd /xxx/xxx/项目名
+git pull
+npm run docs:build
+</code></pre></div><h6 id="_6、监听到push事件后的处理"><a href="#_6、监听到push事件后的处理" class="header-anchor">#</a> 6、监听到push事件后的处理</h6> <p>当监听到push事件后，event的<code>payload</code>参数中包含了github请求接口时的参数，而我只想处理master分支代码更新后，服务器自动拉取代码，因此只判断了<code>event.payload.ref === 'refs/heads/master'</code>时运行脚本；</p> <p>通过node的<code>require('child_process').spawn</code>方法可以运行脚本，具体使用方法可见：<a href="https://nodejs.org/dist/latest-v15.x/docs/api/child_process.html#child_process_child_process_spawn_command_args_options" target="_blank" rel="noopener noreferrer">child_process spawn<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>指定运行'sh'脚本，脚本路径为<code>./bin/pull.sh</code>,即可上面写的脚本文件。</p> <div class="language- extra-class"><pre class="language-text"><code>spawn('sh', ['./bin/pull.sh']);
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>handler.on('push', event=&gt; {
+    try {
+        const {repository,ref} = event.payload;
+        const {full_name,name,private,size} = repository;
+        const autoRun = ref === 'refs/heads/master';
+        console.info(`
+            - 接收到仓库:【${full_name}】的推送消息；
+            - 修改分支：【${ref}】;
+            - 仓库是否私有：${private};
+            - 大小：【${size}】
+            - 是否需要自动部署：${autoRun}】;
+        `);
+
+        // 判断是否需要自动部署
+        if (!autoRun) {
+            return
+        }
+
+        console.log('开始执行脚本');
+        const s = spawn('sh', ['./bin/pull.sh']);
+        s.stdout.on('data', (data) =&gt; {
+          console.log(`${name}:${data}`);
+        });
+        s.stderr.on('data', (data) =&gt; {
+          console.log(`${name}: ${data}`);
+        });
+        console.log('has rebuild');
+    } catch (e) {
+        console.log('build error',e)
+    }
+});
+</code></pre></div><h6 id="_7、使用pm2运行项目"><a href="#_7、使用pm2运行项目" class="header-anchor">#</a> 7、使用pm2运行项目</h6> <p>通过pm2可以让项目在服务器上一直运行，不会关闭服务器后项目就停。
+在此，通过脚本实现接口项目的启动，在源码的<a href="https://github.com/dai1254473705/autopull/blob/master/bin/prod.sh" target="_blank" rel="noopener noreferrer">bin/prod.sh<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>中有如下脚本：</p> <div class="language- extra-class"><pre class="language-text"><code>pm2 start npm -i 1 --name 'auto-run-github' -- run start
+</code></pre></div><h6 id="_8、在github的webhooks中配置接口"><a href="#_8、在github的webhooks中配置接口" class="header-anchor">#</a> 8、在github的webhooks中配置接口</h6> <p>如下图所示</p> <ul><li><code>Payload URL</code>为你的接口地址，结尾应该是<code>github-webhook-handler</code>设置的<code>path</code>参数结尾；</li> <li><code>Content type</code>选择<code>application/json</code>;</li> <li><code>Secret</code>要和github配置保持一致；</li></ul> <div class="center"><img src="/assets/img/002.1530f973.jpg"></div> <h2 id="完整代码如下"><a href="#完整代码如下" class="header-anchor">#</a> 完整代码如下：</h2> <div class="language- extra-class"><pre class="language-text"><code>const http = require('http')
+const createHandler = require('github-webhook-handler')
+const handler = createHandler({ path: '/webhook', secret: 'sdsdfssdfsdf' })
+const spawn = require('child_process').spawn;
+
+handler.on('error', function (err) {
+    console.error('Error:', err.message)
+});
+
+handler.on('push', event=&gt; {
+    try {
+        const {repository,ref} = event.payload;
+        const {full_name,name,private,size} = repository;
+        const autoRun = ref === 'refs/heads/master';
+        console.info(`
+            - 接收到仓库:【${full_name}】的推送消息；
+            - 修改分支：【${ref}】;
+            - 仓库是否私有：${private};
+            - 大小：【${size}】
+            - 是否需要自动部署：${autoRun}】;
+        `);
+
+        // 判断是否需要自动部署
+        if (!autoRun) {
+            return
+        }
+
+        console.log('开始执行脚本');
+        const s = spawn('sh', ['./bin/pull.sh']);
+        s.stdout.on('data', (data) =&gt; {
+          console.log(`${name}:${data}`);
+        });
+        s.stderr.on('data', (data) =&gt; {
+          console.log(`${name}: ${data}`);
+        });
+        console.log('has rebuild');
+    } catch (e) {
+        console.log('build error',e)
+    }
+});
+
+http.createServer( (req, res)=&gt; {
+    handler(req, res, function (err) {
+        console.log('err',err);
+        res.statusCode = 404
+        res.end('api 404')
+    });
+}).listen(3001,()=&gt;{
+    console.log('running in http://127.0.0.1:3001/');
+});
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新时间:</span> <span class="time">11/9/2020, 11:37:25 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/node/koa/1/" class="prev">
+        通过koa实现jsonp的接口提供前端使用
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.bbfaf40f.js" defer></script><script src="/assets/js/2.1a4d3f9b.js" defer></script><script src="/assets/js/7.2d824d60.js" defer></script>
+  </body>
+</html>
